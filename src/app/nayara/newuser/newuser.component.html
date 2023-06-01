@@ -1,0 +1,110 @@
+<div class="cl">
+    <i class="material-icons" id="close"  (click)="onNoClick()">close</i>
+</div>
+
+
+<ng-scrollbar #scrollEl class="scrollbar-for-home" id="page" > 
+    <div style="margin-right: 30px;margin-left: 2%;">
+<div class="row" >
+           <div class="col-xs-8 col-md-8 col-sm-8 col-lg-8 col-xl-8">
+               <p id="p1">NEW USER </p>
+           </div>
+           <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2">
+              
+               </div>
+            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2">
+                
+                </div>
+           
+          
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <!-- <select    [(ngModel)]='adduser1.username' (ngModelChange)='onEmployeeSelected($event)'  id="clrinput" class="form-control" required>
+            <option>User Name</option>
+            
+        <option   *ngFor="let com of employee" [ngValue]="com">{{com.username}}  </option>
+            </select> -->
+            <select   [(ngModel)]='empSelected'  (ngModelChange)='onEmployeeSelected($event)'  class="form-control" required>
+                <option  disabled selected hidden>User Name</option>
+                <option>User Name</option>  
+            <option  *ngFor="let com of employee" [ngValue]="com" >{{com.username}}  </option>
+            
+                </select>
+               
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input  [(ngModel)]="adduser1.password"   type="password" placeholder="Password"  class="form-control" required>
+               
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <select    [(ngModel)]="adduser1.rolename"  class="form-control" required>
+            <option value="" disabled selected hidden>Role</option>
+            <option></option>  
+        <option   *ngFor="let com2 of dropdown" >{{com2.rlna}}  </option>
+            </select>
+        <!-- <input  [(ngModel)]="adduser.first_name"   type="text"  > -->
+               
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="adduser1.OfficeMobile"   value="{{OfficeMobile}}" type="text" placeholder="Contact No."  class="form-control" readonly >
+               
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="adduser1.userid"   value="{{userid}}" type="text" placeholder="User ID"  class="form-control" readonly >
+               
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <!-- <select id="clrinput" class="form-control">
+            <option value="" disabled selected hidden>Code</option>
+            <option></option>
+        </select> -->
+        <input id="clrinput"    [(ngModel)]="adduser1.CTGname"   type="text" value="{{ctgcode}}" placeholder="CTG Code"  class="form-control" readonly >
+                
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="adduser1.DsgName"  value="{{DptName}}" type="text" placeholder="Department"  class="form-control"  readonly>
+               
+    </div>
+</div><br><br>
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="adduser1.DeptName"   value="{{DsgName}}" type="text" placeholder="Designation"  class="form-control" readonly >
+               
+    </div>
+</div><br>
+<br>
+
+<div class="row">
+    <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4 col-xl-4">
+       
+    </div>
+    <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6">
+        <button  class="btn btn-primary"  (click)="adduser()">SAVE AND UPDATE</button>
+
+        </div>
+     <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2">
+         
+         </div>
+    
+   
+</div>
+</div>
+</ng-scrollbar > 

@@ -1,0 +1,155 @@
+table{
+    width: 100%;
+    box-shadow: none;
+    display: block;
+    height: 480px;
+    overflow: auto; 
+}
+
+.mat-column-select {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 4% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-family: Roboto;
+    word-break: break-word;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+
+    .mat-column-username {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 8% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        font-family: Roboto;
+        word-break: break-word;
+        
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        }
+    
+    .mat-column-usud_id {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 7% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    font-family: Roboto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    text-justify: auto;
+    }
+    
+    .mat-column-CTGname {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 7% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    font-family: Roboto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+    
+   
+    
+    .mat-column-DeptName {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 8% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    font-family: Roboto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+    .mat-column-DsgName {
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      flex: 0 0 28% !important;
+      width: 8% !important;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      
+      word-break: break-word;
+      font-family: Roboto;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      }
+  
+      .mat-column-actions {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 8% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        
+        word-break: break-word;
+        font-family: Roboto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        }
+        th.mat-header-cell{
+            background-color: #0095D8;
+            color: white;
+            font-size: 18px;
+            font-family: Roboto;
+	    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 999;
+font-style: normal;
+font-weight: normal;
+        }  
+        .usermang{
+            font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+color: #2A2B2D;
+        }
+.edit{
+    width: 10px;
+height: 10px;
+}
+
+.main {
+    padding: 16px;
+    margin-top: 4%;
+    height: auto; /* Used in this example to enable scrolling */
+  }
+
+
+

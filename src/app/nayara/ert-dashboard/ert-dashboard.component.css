@@ -1,0 +1,291 @@
+table{
+    width: 100%;
+    background-color:white;
+    }
+    
+.container{
+	  background-color:white;
+ 	  margin-left:40px; 
+  }
+  body{
+   background-color:white;
+
+  }
+
+.mat-column-select {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 4% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    font-family: Roboto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    }
+
+    .mat-column-serialno {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 8% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        
+        word-break: break-word;
+        
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        
+        font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #545454;
+
+        
+        }
+    
+    .mat-column-branchname {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 7% !important;
+    /* height: 5%; */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-family: Roboto;
+    word-break: break-word;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    text-justify: auto;
+
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #545454;
+
+    }
+    
+    .mat-column-branchcode {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 7% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    font-family: Roboto;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+
+
+color: #545454;
+
+    }
+    
+   
+    
+    .mat-column-model_name {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 8% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-break: break-word;
+    
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    font-family: Roboto;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #545454;
+
+    }
+    .mat-column-asset_type {
+      word-wrap: break-word !important;
+      white-space: unset !important;
+      flex: 0 0 28% !important;
+      width: 8% !important;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      
+      word-break: break-word;
+      
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      font-family: Roboto;
+      font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #545454;
+
+      }
+  
+      .mat-column-actions {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 8% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        
+        word-break: break-word;
+        font-family: Roboto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        }
+        th.mat-header-cell{
+            background-color: #0095D8;
+            color: white;
+            font-size: 18px;
+            font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-family: Roboto;
+/* font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px; */
+        }  
+        .usermang{
+            font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+margin-top :30rem;
+color: #2A2B2D;
+        }
+.edit{
+    width: 10px;
+height: 10px;
+}
+.mat-cell{
+    /* background-color: rgb(240, 233, 233);
+ */
+}
+/* .mat-row:nth-child(even){
+    background-color: rgb(240, 233, 233);;
+    }
+
+.mat-row:nth-child(odd){
+    background-color:#E5E5E5;
+    } */
+
+.zui-table {
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+    height:400px;
+    left:0px;
+}
+.zui-table thead th {
+    background-color:  #0095D8;
+    border: none;
+    color: white;
+   /* width: 12%;*/
+    padding: 10px;
+    font-size: 18px;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+    text-align: left;
+  /*  text-shadow: 1px 1px 1px #fff;*/
+    white-space: nowrap;
+}
+.zui-table tbody td {
+    color: #333;
+    padding: 10px;
+    white-space: nowrap;
+   /* column-width:200px;*/
+}
+.zui-wrapper {
+    position: relative;
+}
+.zui-scroller {
+    margin-left: 171px;
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding-bottom: 5px;
+    width: 90%;
+}
+.zui-table .zui-sticky-col {
+ /*   border-left: solid 1px #DDEFEF;
+    border-right: solid 1px #DDEFEF;*/
+    left: 0;
+    position: absolute;
+    top: auto;
+    width: auto;
+}
+ ::-webkit-scrollbar {
+    width: 1px;
+   
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    scrollbar-width:auto;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
+    background-color: #bababa;
+    scrollbar-width:thin;
+}
+
+
+  
+    
+
+

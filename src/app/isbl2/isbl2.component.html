@@ -1,0 +1,1939 @@
+<app-navbar></app-navbar>
+<app-logo></app-logo>
+<app-sidebar></app-sidebar> 
+<br><br><br>
+ <div class="container">
+    <div >
+      <br>
+      <br>
+      <br>
+      <p class="refgate" >ISBL 2</p>
+      <br>
+      <p class="total"  >TOTAL HEAD COUNT</p>
+      <p class="headingcount">&nbsp;&nbsp;&nbsp;{{ISBL2Count.isbl2count}}</p>
+      <a  (click)="isomvisitor2();isomlmv2();isomemployee2();isomhmv2();isomtempworker2();isomtempvehicle2();isomcontractstaff2();vgvisitor2();vglmv2();vgemployee2();vghmv2();vgtempworker2();vgtempvehicle2();vgcontractstaff2();dhvisitor2();dhlmv2();dhemployee2();dhhmv2();dhtempworker2();dhtempvehicle2();dhcontractstaff2();back1()" *ngIf="back === false" > 
+        <button class="btn btn-secondary" id="back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+         </button>
+      </a>
+      <a  (click)="goBack()" *ngIf="back === true"> 
+        <button class="btn btn-secondary" id="back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      </svg>
+         </button>
+      </a>
+    </div>
+    <div class="card1">
+      <div class="card-body">
+              <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist" >
+                <li class="nav-item"  >
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#MainGate" role="tab" aria-controls="home"
+                    aria-selected="true" (click)="isbl2Data('ISBL2','ISOM','CONT')"><b>ISOM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span id="span1">{{flag3Counts.isom}}</span> </b></a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Material" role="tab" aria-controls="profile"
+                    aria-selected="false"(click)="isbl2Data('ISBL2','VGOH','CONT')"><b>VGOHT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span id="span1" >{{flag3Counts.vgoh}}</span></b></a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Labour" role="tab" aria-controls="contact"
+                    aria-selected="false" (click)="isbl2Data('ISBL2','DHDT','CONT')"><b>DHDT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span id="span1">{{flag3Counts.dhdt}}</span></b></a>
+                </li>
+               
+              </ul>
+        
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="MainGate" role="tabpanel" aria-labelledby="MainGate-tab">
+        
+                  <br>
+                  
+                    <div class="row">
+                      <div class="container">
+                        <div class="column" 
+                        *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata ===false && tempvehicledata===false && contractstaffdata === false">
+
+                          <b style="margin-left: 9%;">HEAD COUNT</b>
+                          <b style="margin-left: 36%;">VEHICLES</b>
+                          <br>
+                          <br>
+                              
+                        </div>
+
+                        <div *ngIf="visitordata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> VISITORS</p>
+                              <p id="total" style="margin-top: -15px;">TOTALHEADCOUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.visitorcount}}</span> </p>
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter0($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata1()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMVISITOR" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+       		          		<div *ngIf="lmvdata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> LMV</p>
+                              <p id="total" style="margin-top: -15px;">TOTALHEADCOUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num">{{codeCount.lmvcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter1($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata2()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                          
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMLMV" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="employeedata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> EMPLOYEE</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.empcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter2($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata3()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMEMPLOYEE" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="hmvdata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> HMV</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.hmvcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter3($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata4()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                          
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMHMV" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+	                  		<div *ngIf="tempworkerdata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> TEMP.WORKER</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.tmpworkercount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter4($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata5()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMTEMPWORKER" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="tempvehicledata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> TEMP.VEHICLE</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.tempvehiclecount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter5($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata6()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMTEMPVEHICLE" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="contractstaffdata === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> CONTRACT STAFF</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.contcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter6($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata7()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="ISOMCONTRACTUAL" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                              
+                              <div class="card" (click)="isomvisitor1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata ===false && contractstaffdata === false">
+                                <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        VISITOR
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.visitorcount}}</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                              
+                                <div class="card" (click)="isomlmv1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata ===false && contractstaffdata === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        LMV
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.lmvcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                                <br>
+                                <div class="card" (click)="isomemployee1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata === false && contractstaffdata === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        EMPLOYEE
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.empcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                                <br>
+                                <div class="card" (click)="isomhmv1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata ===false && contractstaffdata === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        HMV
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.hmvcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                                <br>
+                                <div class="card" (click)="isomtempworker1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata ===false && contractstaffdata === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        TEMP.WORKER
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.tmpworkercount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                                <br>
+                                <div class="card" (click)="isomtempvehicle1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata ===false && contractstaffdata === false" >
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        TEMP.VEHICLE
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.tempvehiclecount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;top: 1%;">
+                                <br>
+                                <div class="card" (click)="isomcontractstaff1()"  *ngIf="visitordata === false && lmvdata === false && employeedata === false && hmvdata === false && tempworkerdata === false && tempvehicledata ===false && contractstaffdata === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                      CONTRACT STAFF
+                                    </p>
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                    TOTAL HEAD COUNT
+                                    </p>
+                                    <p class="headingcardcount" >{{codeCount.contcount}}</p>
+        
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>       
+                    </div>
+                    </div>
+                  
+        
+        
+        
+                </div>
+
+                <!--VGOHT-->
+                <div class="tab-pane fade" id="Material" role="tabpanel" aria-labelledby="Material-tab">
+
+                  <br>
+                  
+                    <div class="row">
+                      <div class="container">
+                        <div class="column" *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 ===false && tempvehicledata1===false && contractstaffdata1 === false">
+
+                          <b style="margin-left: 9%;">HEAD COUNT</b>
+                          <b style="margin-left: 36%;">VEHICLES</b>
+                          <br>
+                          <br>
+                              
+                        </div>
+
+                        
+                        <div *ngIf="visitordata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> VISITORS</p>
+                              <p id="total" style="margin-top: -15px;">TOTALHEADCOUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.visitorcount}}</span> </p>
+                            </div>
+                           
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter7($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata8()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTVISITOR" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+       	          			<div *ngIf="lmvdata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> LMV</p>
+                              <p id="total" style="margin-top: -15px;">TOTALHEADCOUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.lmvcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter8($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata9()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                          
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTLMV" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="employeedata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> EMPLOYEE</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num">{{codeCount.empcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter9($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata10()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTEMPLOYEE" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="hmvdata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> HMV</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.hmvcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter10($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata11()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                          
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTHMV" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+		                  	<div *ngIf="tempworkerdata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> TEMP.WORKER</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.tmpworkercount}}</span> </p>
+                            </div>
+                           
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter11($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata12()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTTEMPWORKER" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+	                  		<div *ngIf="tempvehicledata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> TEMP.VEHICLE</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.tempvehiclecount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter12($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata13()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTTEMPVEHICLE" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+			                  <div *ngIf="contractstaffdata1 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> CONTRACT STAFF</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num">{{codeCount.contcount}}</span> </p>
+                            </div>
+                           
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter13($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata14()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="VGOHTCONTRACTUAL" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+        
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                              
+                              <div class="card" (click)="vgvisitor1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false">
+                                <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        VISITOR
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.visitorcount}}</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                              
+                                <div class="card" (click)="vglmv1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        LMV
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.lmvcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                                <br>
+                                <div class="card" (click)="vgemployee1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        EMPLOYEE
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount">{{codeCount.empcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                                <br>
+                                <div class="card" (click)="vghmv1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        HMV
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.hmvcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                                <br>
+                                <div class="card" (click)="vgtempworker1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        TEMP.WORKER
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.tmpworkercount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                                <br>
+                                <div class="card" (click)="vgtempvehicle1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false" >
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        TEMP.VEHICLE
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.tempvehiclecount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;top: 1%;">
+                                <br>
+                                <div class="card" (click)="vgcontractstaff1()"  *ngIf="visitordata1 === false && lmvdata1 === false && employeedata1 === false && hmvdata1 === false && tempworkerdata1 === false && tempvehicledata1 ===false && contractstaffdata1 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                      CONTRACT STAFF
+                                    </p>
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                    TOTAL HEAD COUNT
+                                    </p>
+                                    <p class="headingcardcount" >{{codeCount.contcount}}</p>
+        
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>       
+                    </div>
+                    </div>
+        
+                </div>
+                <!--  DHDT  -->
+                <div class="tab-pane fade" id="Labour" role="tabpanel" aria-labelledby="Labour-tab">
+                  <br>
+                  
+                    <div class="row">
+                      <div class="container">
+                        <div class="column" *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 ===false && tempvehicledata2===false && contractstaffdata2 === false">
+
+                          <b style="margin-left: 9%;">HEAD COUNT</b>
+                          <b style="margin-left: 36%;">VEHICLES</b>
+                          <br>
+                          <br>
+                              
+                        </div>
+                        
+                        <div *ngIf="visitordata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> VISITORS</p>
+                              <p id="total" style="margin-top: -15px;">TOTALHEADCOUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.visitorcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter14($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata15()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTVISITOR" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+       		          		<div *ngIf="lmvdata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> LMV</p>
+                              <p id="total" style="margin-top: -15px;">TOTALHEADCOUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num">{{codeCount.lmvcount}}</span> </p>
+                            </div>
+        
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter15($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+			 <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+
+                              <button (click)="Exportdata16()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                          
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTLMV" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+		                  	<div *ngIf="employeedata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> EMPLOYEE</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.empcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter16($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata17()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTEMPLOYEE" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+			                  <div *ngIf="hmvdata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> HMV</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.hmvcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter17($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata18()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                          
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTHMV" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+		                  	<div *ngIf="tempworkerdata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> TEMP.WORKER</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" > {{codeCount.tmpworkercount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter18($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata19()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTTEMPWORKER" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+			                  <div *ngIf="tempvehicledata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> TEMP.VEHICLE</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.tempvehiclecount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter19($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata20()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTTEMPVEHICLE" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+
+			                  <div *ngIf="contractstaffdata2 === true">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" style="margin-left: 1%;">
+                              <p id="visitor"> CONTRACT STAFF</p>
+                              <p id="total" style="margin-top: -15px;">TOTAL HEAD COUNT
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                  id="num" >{{codeCount.contcount}}</span> </p>
+                            </div>
+                            
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <input style="border:2px black solid ;width: 80%;border-radius: 3px;height: 40%;margin-top: 20px;"   (keyup)="applyFilter20($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+                      
+                            
+                            </div>
+                            <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+                              <button (click)="Exportdata21()" class="btn btn-success" Style="width: 40%;margin-left: 15rem;">Export Data</button>
+                
+                            </div>
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6 col-xl-6 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+                            </div>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2 btn-group flex-end float-right "
+                              style="justify-content: flex-end;">
+
+                            </div>
+                          </div>
+                          <table mat-table [dataSource]="DHDTCONTRACTUAL" matSort class="mat-elevation-z8">
+
+
+                            <ng-container matColumnDef="UserID" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> UserID </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.UserID}} </td>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="Name" class="mat-column-UserID">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Name}} </td>
+
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="CTGCODE" class="mat-column-CTGCODE">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CTGCODE </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Code}} </td>
+
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="DptName" class="mat-column-DptName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DptName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Department}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+
+
+                            <ng-container matColumnDef="DsgName" class="mat-column-DsgName">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> DsgName </th>
+                              <td mat-cell *matCellDef="let products1"> {{products1.Designation}} </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+
+                          </table>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                              
+                              <div class="card" (click)="dhvisitor1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false">
+                                <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        VISITOR
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.visitorcount}}</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                              
+                                <div class="card" (click)="dhlmv1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        LMV
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.lmvcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                                <br>
+                                <div class="card" (click)="dhemployee1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        EMPLOYEE
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.empcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                                <br>
+                                <div class="card" 
+                                (click)="dhhmv1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        HMV
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.hmvcount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;">
+                                <br>
+                                <div class="card" (click)="dhtempworker1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        TEMP.WORKER
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.tmpworkercount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: -2%;">
+                                <br>
+                                <div class="card" (click)="dhtempvehicle1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false" >
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                        TEMP.VEHICLE
+                                      </p>
+                                      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                      TOTAL HEAD COUNT
+                                      </p>
+                                      <p class="headingcardcount" >{{codeCount.tempvehiclecount}}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="left: 4%;top: 1%;">
+                                <br>
+                                <div class="card" (click)="dhcontractstaff1()"  *ngIf="visitordata2 === false && lmvdata2 === false && employeedata2 === false && hmvdata2 === false && tempworkerdata2 === false && tempvehicledata2 ===false && contractstaffdata2 === false">
+                                  <div class="card-body">
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 18px;">
+                                      CONTRACT STAFF
+                                    </p>
+                                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 14px;">
+                                    TOTAL HEAD COUNT
+                                    </p>
+                                    <p class="headingcardcount" >{{codeCount.contcount}}</p>
+        
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>       
+                    </div>
+                    </div>
+        
+                </div>
+
+              </div>
+</div>
+  </div>

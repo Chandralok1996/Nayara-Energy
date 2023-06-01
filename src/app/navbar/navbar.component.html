@@ -1,0 +1,72 @@
+
+
+<div class="navbar  navbar-expand-lg navbar-fixed-top  navbar-toggle " (click)="collapsed=!collapsed" >
+  <div class="container-fluid" >
+
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#"><img style="height: 40px;width: 53px;" src="assets/img/Nayara Logo Small.png"></a>
+        </li>
+
+    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)='collapsed=true'>
+    <ul class="nav navbar-nav mx-auto " >
+
+        <li class="nav-item"><a class="nav-link" style="color: white;font-family: Roboto;font-size: 24px;"
+                href="#">
+                SURAKSHA NETRA</a></li>
+    </ul>
+
+
+    <ul class="nav navbar-nav " >
+        <li class="nav-item">
+            <a style="font-size:18px;color:white;" id="demo1">
+                
+               
+            </a><br>
+            <a style="font-size:14px;color:white;" id="demo">
+                
+              
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="#" >
+                
+            </a>
+        </li>
+
+    </ul>
+    <ul class="navbar-nav flex-row mb-2  ">
+      
+    </ul>
+
+
+
+    <button class="btn btn-light" style="border-radius:50px">{{this.name}}</button>
+   
+    <ul class="nav navbar-nav " >
+        <li class="nav-item ">
+            <a role="button" href="#"></a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+		   
+                <img *ngIf="authService.isLoggedIn()" (click)="authService.logout()"   id="logout" src="./assets/img/Logout.png"
+	style="color:white;height: 32px;width: 30px;margin-right: -20px;" />
+
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="#"></a>
+        </li>
+    </ul>
+</div>
+  </div>
+  </div>

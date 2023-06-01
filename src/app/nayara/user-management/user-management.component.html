@@ -1,0 +1,132 @@
+<app-navbar></app-navbar>
+
+
+
+
+<br>
+<div class="main">
+
+    <div class="row">
+      <div class="col-xs-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+       <!-- sidenavbar -->
+      </div>
+      <div class="col-xs-5 col-md-3 col-sm-5 col-lg-3 col-xl-3">
+        <h4 id="usermang">USER MANAGEMENT</h4>
+      <!-- <h3 id="h31"><u><b>XX</b></u></h3> -->
+      </div>
+      
+      <div class=" col-xs-5 col-md-4 col-sm-5 col-lg-4 col-xl-4 flex-end center-block" style="text-align: center;">
+        
+        <input style="border: none;width: 80%;border-radius: 3px;height: 80%;"   (keyup)="applyFilter($event.target.value)" matInput placeholder=" &nbsp;&nbsp;Search  " [(ngModel)]="value"  />
+
+        <!-- <button mat-button *ngIf="value"  color= "primary" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        </button> -->
+      
+      </div>
+      <div class="col-xs-3 col-md-1 col-sm-3 col-lg-1 col-xl-1"></div>
+     
+      <div  class="col-xs-6 col-md-2 col-sm-6 col-lg-2 col-xl-2 btn-group flex-end float-right " style="justify-content: flex-end;">
+     
+      <button  class="btn btn-success"  (click)="openDialog()"><b>ADD USER</b></button>
+      </div>
+    </div>
+
+<br>
+
+    <!-- <div class="row" style="margin-bottom:30px">
+    
+  </div> -->
+
+<div class="row">
+
+<div class="col-xs-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+
+ <app-sidebar></app-sidebar>
+
+</div>
+
+<div class="col-xs-10 col-md-10 col-sm-10 col-lg-10 col-xl-10 " >
+<div id="table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
+
+        <!-- <ng-container matColumnDef="select" class="mat-column-select" >
+            <th mat-header-cell *matHeaderCellDef >
+              <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+              </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null"
+                            [checked]="selection.isSelected(row)">
+              </mat-checkbox>
+            </td>
+          </ng-container>  -->
+
+        <!-- Position Column -->
+         <ng-container matColumnDef="username" class="mat-column-username">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header >  Name </th>
+          <td mat-cell *matCellDef="let products"> {{products.username }} <br> {{products.OfficeMobile}}   </td>
+        
+         
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="usud_id" class="mat-column-usud_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > User Id </th>
+          <td mat-cell *matCellDef="let products"> {{products.usud_id}} </td>
+          
+        </ng-container>
+      
+        <!-- Weight Column -->
+       <ng-container matColumnDef="CTGname" class="mat-column-CTGname" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > CTG Name </th>
+          <td mat-cell *matCellDef="let products"> {{products.CTGname}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="DeptName" class="mat-column-DeptName" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Department </th>
+          <td mat-cell *matCellDef="let products"> {{products.DeptName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="DsgName" class="mat-column-DsgName" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Designation </th>
+          <td mat-cell *matCellDef="let products"> {{products.DsgName}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="actions" class="mat-column-actions">
+            <th mat-header-cell  *matHeaderCellDef >Edit  </th>
+             <td mat-cell *matCellDef="let row" (click)="$event.stopPropagation()">
+                <span class="material-icons"  (click)="onRowClicked(row)" style="cursor: pointer;">
+                    create
+                    </span>&nbsp;&nbsp;
+                    
+             <!-- <img style="width: 25px;height: 25px;" src="assets/img/Edit Button.png">&nbsp; -->
+             <!-- <img style="width: 25px;height: 25px;"  src="assets/img/Delete Button.png"> -->
+             
+             </td>
+           </ng-container>
+
+
+         
+
+
+
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)" ></tr>
+      
+      </table>
+      <!-- <mat-paginator [length]="length" [pageSize]="pageSize"  [pageSizeOptions]="pageSizeOptions"
+      showFirstLastButtons class="mat-elevation-z8">
+    </mat-paginator> -->
+    </div>
+    </div>
+    </div>
+    <!-- <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2"></div> -->
+
+  </div>

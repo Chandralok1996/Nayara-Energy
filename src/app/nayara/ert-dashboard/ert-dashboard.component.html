@@ -1,0 +1,144 @@
+<app-navbar></app-navbar>
+<!--<app-sidebar></app-sidebar>-->
+<app-logo></app-logo>
+<body>
+<div class="container">
+<br>
+<br>
+<br>
+
+    <div class="row">
+      <div class="col-xs-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+       <!-- sidenavbar -->
+      </div>
+      <div class="col-xs-3 col-md-3 col-sm-3 col-lg-3 col-xl-3">
+        <h4 id="usermang">ERT DASHBOARD</h4>
+      <!-- <h3 id="h31"><u><b>XX</b></u></h3> -->
+      </div>
+      
+    
+     
+    </div>
+
+<br>
+
+    <!-- <div class="row" style="margin-bottom:30px">
+    
+  </div> -->
+
+<div class="row">
+
+<div class="col-xs-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+	    <app-sidebar></app-sidebar>
+</div>
+
+
+
+
+<div class="col-xs-11 col-md-11 col-sm-11 col-lg-11 col-xl-11 " >
+<div id="table">    
+<div class="zui-wrapper">
+      <div class="zui-scroller">
+          <table class="zui-table table-striped">
+              <thead>
+                  <tr>
+                      <th class="zui-sticky-col" style="column-width:100px;">DEPARTMENT</th>
+		                  <th scope="row" style="background-color: #0095D8;">Members</th>
+                      <th scope="row" style="background-color: #0095D8;"></th>
+                      <th scope="row" style="background-color: #0095D8;"></th>
+                      <th scope="row" style="background-color: #0095D8;"></th>
+                      <th scope="row" style="background-color: #0095D8;"></th>
+
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                <tr >
+                  <td  class="zui-sticky-col" style="width: 12%;font-size: 12px; padding: 0px;text-align:left;margin-top:29px;">TRAINED FIRST AIDERS&nbsp;</td>
+                  <td *ngFor="let data of TFAERT" style="font-size: 12px;" >{{data.Name}} <br> {{data.Mobile}}</td>   
+                  <td >
+                    <button (click)="downloadata()" class="btn btn-success">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+                        <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                      </svg>&nbsp; Download
+                    </button>
+                  </td>
+                 
+                </tr>
+                <tr >
+                  <td class="zui-sticky-col" style="width: 12%;font-size: 12px;text-align:left;margin-top:19px;margin-left:-10px;">AUXILLARY FIRE SQUAD</td>
+                   <td *ngFor="let data of AuxERT"  style="font-size: 12px;">{{data.Name}} <br> {{data.Mobile}}</td>
+                
+                 
+                  <td >
+                   
+                   
+                    <button (click)="downloadata1()" class="btn btn-success">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+                        <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                      </svg>&nbsp; Download
+                    </button>
+                  </td>
+                </tr>
+                <tr >
+                  <td class="zui-sticky-col" style="width: 12%;font-size: 12px; padding: 0px;text-align:left;margin-top:25px;">SECURITY OFFICIALS&nbsp;&nbsp;</td>
+                  <td *ngFor="let data of SO"  style="font-size: 12px;">{{data.Name}} <br> {{data.Mobile}}</td>
+                
+                  
+                  <td >
+                   
+                  
+                    <button (click)="downloadata2()" class="btn btn-success">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+                        <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                      </svg>&nbsp; Download
+                    </button>
+                  </td>
+                </tr>
+                <tr >
+                  <td class="zui-sticky-col" style="width: 12%; padding: 0px;font-size: 12px;text-align:left;margin-top:25px;">ECC PRIMARY&nbsp;&nbsp;</td>
+                  <td *ngFor="let data of ECCP"  style="font-size: 12px;">{{data.Name}} <br> {{data.Mobile}}</td>
+                
+                  <td >
+                   
+                 
+                    <button (click)="downloadata3()" class="btn btn-success">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+                        <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                      </svg>&nbsp; Download
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="zui-sticky-col" style="width: 12%; padding: 0px;margin-top:25px;font-size: 12px;text-align:left;">ECC SECONDARY&nbsp;&nbsp;</td>
+                  <td *ngFor="let data of ECCS"  style="font-size: 12px;">{{data.Name}} <br> {{data.Mobile}}</td>
+                
+                  <td >
+                   
+                
+                    <button (click)="downloadata4()" class="btn btn-success">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+                        <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                      </svg>&nbsp; Download</button>
+                  </td>
+                </tr>
+
+              </tbody>
+          </table>
+      </div>
+      
+      <p style="font-size: 12px;color: black;margin-left: -10px;margin-top:15px;">*Note: Scroll right to see more details</p>
+  </div>
+
+
+</div>
+    </div>
+    </div>
+</div>
+</body>    
+<!-- <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2 col-xl-2"></div> -->

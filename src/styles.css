@@ -1,0 +1,41 @@
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ .mat-dialog-container {
+        padding-right: 0 !important;
+
+        }
+
+        .mat-form-field-empty.mat-form-field-label, .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+            display: block;
+            color: black;
+	     font-weight: 400;
+
+        }
+
+#loader {
+            border: 7px solid #007AFF;
+            border-radius: 50%;
+            border-top: 7px solid #c4c4c4;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        
+        

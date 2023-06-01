@@ -1,0 +1,48 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-fhd-12"  style="
+    background: url('assets/img/47.jpg')  ;
+    background-repeat:no repeat;
+    background-size: 100% 100%;
+    overflow-x:hidden;
+  height:100%;
+  width:100%;">
+<div class="container">
+    <div class="row">
+        <div class="  col-md-3 col-lg-3 col-xl-3 ">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 " >
+            <br><br><br><br><br><br>
+            <h3 style="color: white;">Welcome to Suraksha Netra!</h3>
+            <br>
+           
+                <form class = "tp-form">
+                    <mat-card class="example-card">
+                          <mat-card-content>
+                            <mat-form-field class = "tp-full-width">
+                               <input matInput placeholder = "Name"  [(ngModel)]="loginPost.username" [ngModelOptions]="{standalone: true}">
+                            </mat-form-field><br>
+                            <mat-form-field class = "tp-full-width">
+				    <input matInput type="password" placeholder = "Password" [(ngModel)]="loginPost.password" [ngModelOptions]="{standalone: true}">
+                            </mat-form-field>
+                            <div class="mt-3 text-center">
+                                <button class="btn btn-primary "  (click)="nayaraLogin()"  type="submit">LOGIN</button>
+                            </div>
+			     <p class="at mt-3" style="cursor: pointer;">Powered by Augmented Transformations Pvt.Ltd</p>
+                        </mat-card-content>
+                      </mat-card>
+           </form>
+           <br><br>
+           <div class="row" >
+            <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-2 ">
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 " style="text-align: center;" >
+            </div>
+        </div>
+        </div>
+        <div class=" col-xs-4 col-sm-4  col-md-2 col-lg-2 col-xl-2 ">
+            <br>
+            <img style="height: 115px;width: 143px;" src="assets/img/Nayara Logo Login.png" >
+        </div>
+    </div>
+</div>

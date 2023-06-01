@@ -1,0 +1,41 @@
+#suraksha{
+
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+/* line-height: 28px; */
+/* padding-top: 6%; */
+
+color: #e9ebf0;
+}
+
+ .navbar-expand-sm, .navbar-expand-xs{
+     
+    background-color:#0E1E51;
+    width: 100%;
+    font-family: Roboto;
+    
+}
+
+@media (min-width: 768px) {
+    #bs-example-navbar-collapse-1 {
+       padding: 0 15px;
+    }
+}
+.row{
+    float: left;
+}
+.navbar {
+    position: fixed;
+    top: 0px;
+    padding-top:0px;
+    padding-bottom:0px;
+    background-color:#0E1E51;
+    width: 100%;
+    font-family: Roboto;
+    overflow: hidden;
+    z-index: 1;
+
+
+}

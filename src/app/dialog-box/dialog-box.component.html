@@ -1,0 +1,89 @@
+<i class="material-icons"  style="cursor:pointer;position:absolute;top:10%;left:66.5%" (click)="onNoClick()">close</i>
+
+
+<div class="row">
+           <div class="col-xs-8 col-md-8 col-sm-8">
+               <p id="p1">UPDATE PASSWORD </p>
+           </div>
+           <div class="col-xs-2 col-md-2 col-sm-2">
+              
+               </div>
+            <div class="col-xs-2 col-md-2 col-sm-2">
+                
+                </div>
+           
+          
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="userUpdate.username"   type="username" placeholder="Username"   class="form-control" readonly>
+               
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input [(ngModel)]="userUpdate.password"   type="password" placeholder="Password"  class="form-control" required>
+               
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="userUpdate.OfficeMobile"   type="text" placeholder="Contact No."  class="form-control" readonly >
+               
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="userUpdate.userid"    type="text" placeholder="User ID"  class="form-control" readonly >
+               
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <!-- <select id="clrinput" class="form-control">
+            <option value="" disabled selected hidden>Code</option>
+            <option></option>
+        </select> -->
+        <input id="clrinput"    [(ngModel)]="userUpdate.CTGname"   type="text"  placeholder="CTG Code"  class="form-control" readonly >
+                
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="userUpdate.DsgName"   type="text" placeholder="Department"  class="form-control"  readonly>
+               
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="userUpdate.DeptName"    type="text" placeholder="Designation"  class="form-control" readonly >
+               
+    </div>
+</div><br>
+<!-- <div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <input id="clrinput" [(ngModel)]="userUpdate.rolename"   type="role" placeholder="role"  class="form-control" readonly>
+               
+    </div>
+</div><br> -->
+
+
+<div class="row">
+    <div class="col-xs-4 col-md-4 col-sm-4">
+       
+    </div>
+    <div class="col-xs-6 col-md-6 col-sm-6">
+        <button  style="background-color: #0095D8;color: white;font-weight: bold;border:#0095D8 1px solid;height: 32px;border-radius: 3px;width: 120px;"  (click)="userupdate()">SAVE</button>
+
+        </div>
+     <div class="col-xs-1 col-md-1 col-sm-1">
+         
+         </div>
+    
+   
+</div>
